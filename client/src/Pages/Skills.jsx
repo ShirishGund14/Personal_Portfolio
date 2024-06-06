@@ -22,9 +22,9 @@ const Skills = () => {
         <div className='border-t border-t-p h-[25%] p-8 flex flex-col md:flex-row justify-between '>
           <div>
             <div className=' text-xl md:text-2xl flex flex-col justify-left uppercase' >Data Structure & Algorithms</div>
-            <FaCodepen className='text-xl text-p text-[3rem] my-4' />
+            <FaCodepen className=' text-p text-[3rem] my-4' />
           </div>
-          <div className='flex flex-col gap-3 '>
+          <div className='flex flex-col gap-3  text-lines'>
             450+ Qs @Leetcode+GFG
           </div>
         </div>
@@ -35,9 +35,9 @@ const Skills = () => {
               <div>Developement </div>
               <div>Skills</div>
             </div>
-            <FaCodeFork className='text-xl text-p text-[2.5rem] mt-4' />
+            <FaCodeFork className=' text-p text-[2.5rem] mt-4' />
           </div>
-          <div className='flex flex-col gap-3  '>
+          <div className='flex flex-col gap-3  text-lines '>
             <div className=''>Node.js</div>
             <div className=''>React.js</div>
             <div className=''>Express.js</div>
@@ -51,7 +51,7 @@ const Skills = () => {
             <div className='text-2xl flex flex-col justify-center uppercase mr-3' >Languages </div>
             <RiCodeSSlashFill className=' text-[3rem] text-p  mt-4' />
           </div>
-          <div className='flex flex-col md:gap-3'>
+          <div className='flex flex-col md:gap-3 text-lines'>
             <div>C++</div>
             <div>Java</div>
             <div>JavaScript</div>
