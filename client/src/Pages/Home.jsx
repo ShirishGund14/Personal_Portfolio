@@ -1,7 +1,5 @@
 import React, { useRef, useState } from 'react';
 import MyImg from '../img/Myimg.png';
-import Switchbutton from '../Components/Switchbutton';
-import Navbar from '../Components/Navbar';
 import { PiMusicNoteSimpleFill, PiMusicNoteSimpleLight } from "react-icons/pi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import soundtrack from '../sound/soundtrack.mp3';
@@ -12,7 +10,6 @@ const Home = () => {
   const KeyBoardAudioRef = useRef(null);
   const [musicon, setMusicOn] = useState(false);
   const [volume, setVolume] = useState(0.1); // Volume level from 0.0 to 1.0
-  const [keyvolume,Setkeyvolume]=useState(false);
 
   const handlePlayMusic = () => {
     if (!musicon) {
@@ -31,10 +28,10 @@ const Home = () => {
     audioRef.current.volume = newVolume;
   };
 
-  const handleKeyVolume=()=>{
-     if(KeyBoardAudioRef.current){
+  const handleKeyVolume = () => {
+    if (KeyBoardAudioRef.current) {
       KeyBoardAudioRef.current.play();
-     }
+    }
   }
 
   return (
@@ -43,26 +40,25 @@ const Home = () => {
       <div className='text-7xl md:text-9xl uppercase font-semibold'>Gund</div>
       <img src={MyImg} className='myimg w-full h-screen object-contain absolute -top-[0.5rem] md:-top-[5rem] sm:-left-5' />
 
-      <button className='bg-p p-4 fixed text-black mt-8 z-[1000000]' onClick={handleKeyVolume} ><GiHamburgerMenu/></button>
-      <button onClick={handlePlayMusic} className='bg-p p-4 right-[13rem]  z-[1000000] md:right-[86.4rem] fixed text-black mt-8'>
+      <div className="fixed top-[12rem] md:top-[19rem] z-[1000000] flex flex-col items-center gap-2 ">
+<div>
+<button className='bg-p p-4 text-black' onClick={handleKeyVolume}>
+          <GiHamburgerMenu />
+        </button>
+        <button onClick={handlePlayMusic} className='bg-p p-4 text-black'>
           {musicon ? <PiMusicNoteSimpleFill /> : <PiMusicNoteSimpleLight />}
         </button>
-      {/* <Switchbutton/> */}
-
-      <div className='flex justify-between '>
-
-        <audio ref={audioRef} src={soundtrack} />
-       
+</div>
         <input id="volume" type="range" min="0" max="1" step="0.01" value={volume}
-          className='text-p fixed w-[6rem] top-[12rem] md:top-[19rem] z-[1000000] '
-          onChange={handleVolumeChange}
-        />
+        className='text-p w-[6rem]'
+        onChange={handleVolumeChange}
+      />
       </div>
 
+      <audio ref={audioRef} src={soundtrack} />
       <audio src={keyboard} ref={KeyBoardAudioRef}></audio>
 
 
-      {/* {<Navbar/>} */}
     </div>
   );
 };
