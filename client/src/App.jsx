@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
  import "slick-carousel/slick/slick-theme.css";
 import Photography from './Pages/Photography'
 import Footer from './Pages/Footer'
+import IconsSection from './Pages/IconsSection'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
       <About/>
       <Projects/>
       <Skills/>
+      {/* <IconsSection/> */}
       <Photography/>
       <Footer/>
 
